@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Birthday Signs</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+            <div class="landing-page">
+            <img src="Icons.jpg" alt="Signs icons"></div>
+            <div class="form">
+                <div class="split left">
+                    <div class="centered">
+                        <h2>Fill in your information</h2>
+                        <form>
+                          <select id="select" name="month">
+                              <option value="0">Month</option>
+                              <option value="1">January</option>
+                              <option value="2">February</option>
+                              <option value="3">March</option>
+                              <option value="4">April</option>
+                              <option value="5">May</option>
+                              <option value="6">June</option>
+                              <option value="7">August</option>
+                              <option value="8">January</option>
+                              <option value="9">September</option>
+                              <option value="10">October</option>
+                              <option value="11">November</option>
+                              <option value="12">December</option>
+                            </select>
+                            <input type="text" size="10" id="day" placeholder="Day">
+                            <br><br>
+                            <input type="text" size="10" id="year" placeholder="Birthyear">
+                        </form>
+                        <br><br>
+                            <button class="generate" onclick="generateSigns()"><b>Generate my signs!</b></button>
+                            
+                    </div>
+                </div>
+                <div class="split right">
+                      <div class="centered">
+                        <h2>Results:</h2>
+                        <label for="sign1">Chinese Zodiac: </label>
+                        <input id="sign1" type="text" size="10"  value="">
+                          <br><br>
+                        <label for="sign2">Astrological Sign: </label>
+                        <input id="sign2" type="text" size="10"  value="">
+                          <br><br>
+                        <label for="sign3">Birthstone: </label>
+                        <input id="sign3" type="text" size="10"  value="">
+                          <br><br>
+                        <label for="sign4">Birth Flower:</label>
+                        <input id="sign4" type="text" size="15"  value="">
+                              </div>
+                      </div>
+                    </div>
+        
+        <script>
+            function generateSigns()
+            {
+            var month = document.getElementById("select").value;
+            var day =document.getElementById("day").value;
+            var year = document.getElementById("year").value;
+            var zodiac, astro, stone, flower;
+            var x = (1901 - year) % 12;
+            if (x == 1 || x == -11) {zodiac = "Rat";}
+            if (x == 0) {zodiac = "Ox";}
+            if (x == 11 || x == -1) {zodiac = "Tiger";}
+            if (x == 10 || x == -2) {zodiac = "Rabbit";}
+            if (x == 9 || x == -3)  {zodiac = "Dragon";}
+            if (x == 8 || x == -4)  {zodiac ="Snake";}
+            if (x == 7 || x == -5)  {zodiac = "Horse";}
+            if (x == 6 || x == -6)  {zodiac = "Sheep";}
+            if (x == 5 || x == -7)  {zodiac = "Monkey";}
+            if (x == 4 || x == -8)  {zodiac = "Cock/Phoenix";}
+            if (x == 3 || x == -9)  {zodiac = "Dog";}
+            if (x == 2 || x == -10)  {zodiac = "Boar";} 
+                
+            if (month == 1 && day >=21 || month == 2 && day <=19) {astro = "Aquarius";}
+            if (month == 1 && day > 31) {value = "Invalid day";}
+            if (month == 2 && day >=20 || month == 3 && day <=20) {astro = "Pisces";}
+            if (month == 2 && day > 29) {value = "Invalid day";}
+            if (month == 3 && day >=21 || month == 4 && day <=19) {astro = "Aries";}
+            if (month == 3 && day > 31) {value = "Invalid day";}
+            if (month == 4 && day >=20 || month == 5 && day <=20) {astro = "Taurus";}
+            if (month == 4 && day > 30) {value = "Invalid day";}
+            if (month == 5 && day >=21 || month == 6 && day <=21) {astro = "Gemini";}
+            if (month == 5 && day > 31) {value = "Invalid day";}
+            if (month == 6 && day >=22 || month == 7 && day <=21) {astro = "Cancer";}
+            if (month == 6 && day > 30) {value = "Invalid day";}
+            if (month == 7 && day >=22 || month == 8 && day <=21) {astro = "Leo";}
+            if (month == 7 && day > 31) {value = "Invalid day";}
+            if (month == 8 && day >=22 || month == 9 && day <=22) {astro = "Virgo";}
+            if (month == 8 && day > 31) {value = "Invalid day";}
+            if (month == 9 && day >=23 || month == 10 && day <=22) {astro = "Libra";}
+            if (month == 9 && day > 30) {value = "Invalid day";}
+            if (month == 10 && day >=23 || month == 11 && day <=21) {astro = "Scorpio";}
+            if (month == 10 && day > 31) {value = "Invalid day";}
+            if (month == 11 && day >=22 || month == 12 && day <=21) {astro = "Sagittarius";}
+            if (month == 11 && day > 30) {value = "Invalid day";}
+            if (month == 12 && date >=22 || month == 1 && day <=21) {astro = "Capricorn";}
+            if (month == 12 && day > 31) {value = "Invalid day";}
+                
+            if (month == 1){ flower = ("Carnation");
+                            stone = ("Garnet");}
+            if (month == 2){ flower = ("Violet");
+                            stone = ("Amethyst");}
+            if (month == 3){ flower = ("Jonquil");
+                            stone = ("Aquamarine");}
+            if (month == 4){ flower = ("Sweet Pea");
+                            stone = ("Diamond");}
+            if (month == 5){ flower = ("Lily of the Valley");
+                            stone = ("Emerald");}
+            if (month == 6){ flower = ("Rose");
+                            stone = ("Pearl");}
+            if (month == 7){ flower = ("Larkspur");
+                            stone = ("Ruby");}
+            if (month == 8){ flower = ("Gladiola");
+                            stone = ("Peridot");}
+            if (month == 9){ flower = ("Aster");
+                            stone = ("Sapphire");}
+            if (month == 10){ flower = ("Calendula");
+                            stone = ("Opal");}
+            if (month == 11){ flower = ("Chrysanthemum");
+                            stone = ("Topaz");}
+            if (month == 12){ flower = ("Narcissus");
+                            stone = ("Turquoise");}
+                
+            document.getElementById("sign1").value = zodiac;
+            document.getElementById("sign2").value = astro;
+            document.getElementById("sign3").value = stone;
+            document.getElementById("sign4").value  = flower;
+            }
+        </script>
+    </body>
+</html>
